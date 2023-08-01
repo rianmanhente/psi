@@ -15,7 +15,7 @@ router.use("/private", passport.authenticate('jwt', {session: false}));
 const upload = multer({
     storage: multer.diskStorage({
         destination(req, file, callback) {
-            callback(null, path.resolve(__dirname, '../../', 'uploads'))
+            callback(null, path.resolve(__dirname, '../', 'uploads'))
         },
         filename(req, file, callback) {
             callback(null, `${Date.now()}-${file.originalname}`);
